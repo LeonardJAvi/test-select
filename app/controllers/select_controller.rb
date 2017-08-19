@@ -1,8 +1,6 @@
 class SelectController < ApplicationController
   def new
    @projects = Project.all
-   @activities = Activity.all
-   @tasks = Task.all
   end
 
   def options
@@ -10,6 +8,6 @@ class SelectController < ApplicationController
   end
 
   def dinamic
-    @task = Task.where(activity_id: params[:activity_id])
+    @tasks = Task.where(activity_id: params[:activity_id])
   end
 end
